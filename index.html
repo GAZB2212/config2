@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Tyre Van Configurator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      color: #333;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .item img {
+      width: 100px;
+      margin-right: 20px;
+    }
+
+    .item-details {
+      flex: 1;
+    }
+
+    .item-price {
+      color: #007bff;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    .quantity-select {
+      margin-top: 10px;
+    }
+
+    .total {
+      font-size: 1.5em;
+      color: #333;
+      font-weight: bold;
+      text-align: right;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Responsive Styles */
+    @media only screen and (max-width: 768px) {
+      .item {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .item img {
+        margin-bottom: 15px;
+      }
+
+      .total {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Mobile Tyre Van Configurator</h1>
+
+    <!-- Section 1: Equipment Selection -->
+    <div class="section" id="equipment-section">
+      <h2>Pick Your Equipment</h2>
+
+      <div class="item">
+        <img src="https://via.placeholder.com/100" alt="Equipment Image">
+        <div class="item-details">
+          <h3>Pack 1 - Non Euro 6 with T1000</h3>
+          <p class="item-price" data-price="5745">£5,745.00</p>
+          <label><input type="checkbox" class="item-checkbox" data-name="Pack 1" data-price="5745"> Select</label>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://via.placeholder.com/100" alt="Wheel Balancer">
+        <div class="item-details">
+          <h3>Upgrade to Auto Spin Wheel Balancer</h3>
+          <p class="item-price" data-price="450">£450.00</p>
+          <label><input type="checkbox" class="item-checkbox" data-name="Auto Spin Wheel Balancer" data-price="450"> Select</label>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://via.placeholder.com/100" alt="CCTV System">
+        <div class="item-details">
+          <h3>Van Online CCTV/DVR System</h3>
+          <p class="item-price" data-price="2200">£2,200.00</p>
+          <label><input type="checkbox" class="item-checkbox" data-name="CCTV System" data-price="2200"> Select</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Van Customization -->
+    <div class="section" id="van-section">
+      <h2>Van Customization</h2>
+
+      <div class="item">
+        <img src="https://via.placeholder.com/100" alt="Van Livery">
+        <div class="item-details">
+          <h3>Van Livery (Full Van Wrap)</h3>
+          <p class="item-price" data-price="3200">£3,200.00</p>
+          <label><input type="checkbox" class="item-checkbox" data-name="Van Livery" data-price="3200"> Select</label>
+          <div class="quantity-select">
+            <label for="van-wrap">Type of Wrap: </label>
+            <select id="van-wrap" class="config-option" data-name="Van Wrap">
+              <option value="LWB Wrap">LWB Wrap</option>
+              <option value="SWB Wrap">SWB Wrap</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://via.placeholder.com/100" alt="Van Interior">
+        <div class="item-details">
+          <h3>Van Interior Walls</h3>
+          <p class="item-price" data-price="1800">£1,800.00</p>
+          <label><input type="checkbox" class="item-checkbox" data-name="Van Interior" data-price="1800"> Select</label>
+          <div class="quantity-select">
+            <label for="interior-panel">Interior Paneling: </label>
+            <select id="interior-panel" class="config-option" data-name="Interior Paneling">
+              <option value="Diabond Liner">Diabond Liner</option>
+              <option value="Aluminium Liner">Aluminium Liner</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Light Pack -->
+    <div class="section" id="light-section">
+      <h2>Lighting Pack</h2>
+
+      <div class="item">
+        <img src="https://via.placeholder.com/100" alt="Light Pack">
+        <div class="item-details">
+          <h3>Standard Light Pack</h3>
+          <p class="item-price" data-price="1200">£1,200.00</p>
+          <label><input type="checkbox" class="item-checkbox" data-name="Standard Light Pack" data-price="1200"> Select</label>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://via.placeholder.com/100" alt="4 Corner Emergency Lights">
+        <div class="item-details">
+          <h3>4 Corner Emergency Lights</h3>
+          <p class="item-price" data-price="325">£325.00</p>
+          <label><input type="checkbox" class="item-checkbox" data-name="4 Corner Emergency Lights" data-price="325"> Select</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Total Summary -->
+    <div class="section">
+      <div class="total">Total: £<span id="total-price">0.00</span></div>
+    </div>
+
+    <button type="button" id="submit-btn">Submit Configuration</button>
+
+    <div id="submitted-data"></div>
+  </div>
+
+  <script>
+    // Function to update total price
+    function updateTotal() {
+      let total = 0;
+      const checkboxes = document.querySelectorAll('.item-checkbox');
+      
+      checkboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+          total += parseFloat(checkbox.getAttribute('data-price'));
+        }
+      });
+
+      document.getElementById('total-price').textContent = total.toFixed(2);
+    }
+
+    // Function to gather all selected items
+    function getSelectedItems() {
+      const selectedItems = [];
+      const checkboxes = document.querySelectorAll('.item-checkbox');
+
+      checkboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+          selectedItems.push({
+            name: checkbox.getAttribute('data-name'),
+            price: checkbox.getAttribute('data-price')
+          });
+        }
+      });
+
+      // Get dropdown selections
+      const configOptions = document.querySelectorAll('.config-option');
+      configOptions.forEach((option) => {
+        const selectedValue = option.value;
+        selectedItems.push({
+          name: option.getAttribute('data-name'),
+          value: selectedValue
+        });
+      });
+
+      return selectedItems;
+    }
+
+    // Add event listeners to checkboxes
+    document.querySelectorAll('.item-checkbox').forEach((checkbox) => {
+      checkbox.addEventListener('change', updateTotal);
+    });
+
+    // Handle form submission
+    document.getElementById('submit-btn').addEventListener('click', () => {
+      const selectedItems = getSelectedItems();
+      const totalPrice = document.getElementById('total-price').textContent;
+      let submittedData = `<h2>Submitted Configuration</h2><ul>`;
+
+      selectedItems.forEach(item => {
+        if (item.price) {
+          submittedData += `<li>${item.name} - £${item.price}</li>`;
+        } else {
+          submittedData += `<li>${item.name}: ${item.value}</li>`;
+        }
+      });
+
+      submittedData += `</ul><p><strong>Total Price: £${totalPrice}</strong></p>`;
+
+      document.getElementById('submitted-data').innerHTML = submittedData;
+    });
+  </script>
+
+</body>
+</html>
